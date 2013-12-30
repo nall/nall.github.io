@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[STUNTAZ!!!]]></title>
-  <link href="http://nall.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Productivity | STUNTAZ!!!]]></title>
+  <link href="http://nall.github.io/blog/categories/productivity/atom.xml" rel="self"/>
   <link href="http://nall.github.io/"/>
   <updated>2013-12-30T15:51:09-08:00</updated>
   <id>http://nall.github.io/</id>
@@ -54,11 +54,9 @@ entries each night when it runs. Sounds good! Here are the pieces.</p>
 
 <h3>Drafts Action</h3>
 
-<p>Below is the importable Drafts action to create &amp; append to the temporary file on Dropbox. The files are stored at:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>/Apps/Drafts/DailyLogs/DayOne-YYYY-MM-DD.md</span></code></pre></td></tr></table></div></figure>
-
+<p>Below is the importable Drafts action to create &amp; append to the temporary file on Dropbox. The files are stored at:
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>/Apps/Drafts/DailyLogs/DayOne-YYYY-MM-DD.md</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>To import this, click on the below URL in iOS:</p>
 
@@ -94,11 +92,9 @@ named DayOne-YYYY-MM-DD.md.</p>
 <h4>basicfile_archive</h4>
 
 <p>This is a boolean that specifies whether temporary files are archived after
-being processed. If set to true, files are copied to:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>/Apps/Drafts/DailyLogs/Archive</span></code></pre></td></tr></table></div></figure>
-
+being processed. If set to true, files are copied to:
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>/Apps/Drafts/DailyLogs/Archive</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>If set to false, the files are removed after processing.</p>
 
@@ -114,15 +110,6 @@ I wrote a small workflow to append to the temporary file. It&rsquo;s available
 <p>With all of this in place, I now have a way to quickly jot down daily updates
 and have those all logged into Day One at a daily granularity. I hope this
 saves someone the work if they&rsquo;ve wanted a similar functionality!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Hello, Octopress World!]]></title>
-    <link href="http://nall.github.io/blog/2013/12/30/hello/"/>
-    <updated>2013-12-30T14:15:42-08:00</updated>
-    <id>http://nall.github.io/blog/2013/12/30/hello</id>
-    <content type="html"><![CDATA[<p>Just testing if this thing is on&hellip;</p>
 ]]></content>
   </entry>
   

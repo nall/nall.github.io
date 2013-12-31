@@ -114,90 +114,12 @@ entry.</p>
 that could be updated during the day and creating a single Day One entry from
 the contents of that file each day.</p>
 
-<p>I wanted to use <a href="http://agiletortoise.com/drafts">Drafts</a> to capture my
-micro-updates. I use it for other actions already, so I&rsquo;m familiar with it. It
-has a huge selection of post-processing actions available and provides ways to
-customize those actions. Specifically, it allows access to
-<a href="http://dropbox.com">Dropbox</a> and that&rsquo;s where I&rsquo;ll keep the temporary file of
-micro-updates.</p>
-
-<p>Once I have a file of micro-updates I need to create a Day One entry. This
-lands squarely in the land of cron/launchd. There&rsquo;s already a utility to suck
-in data from various sources and create Day One entries. It&rsquo;s called
-<a href="http://brettterpstra.com/projects/slogger/">Slogger</a> and I&rsquo;m already using it
-for logging <a href="http://www.fitbit.com">FitBit</a> and <a href="http://untappd.com">Untappd</a>
-data. I just needed to write a plugin that would handle my temporary file.</p>
-
-<p>With those pieces in place, I could capture micro-updates in Drafts, have them
-appended to a file kept on Dropbox and have Slogger create appropriate Day One
-entries each night when it runs. Sounds good! Here are the pieces.</p>
-
-<h2>Nuts &amp; Bolts</h2>
-
-<h3>Drafts Action</h3>
-
-<p>Below is the importable Drafts action to create &amp; append to the temporary file on Dropbox. The files are stored at:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>/Apps/Drafts/DailyLogs/DayOne-YYYY-MM-DD.md</span></code></pre></td></tr></table></div></figure>
-
-
-<p>To import this, click on the below URL in iOS:</p>
-
-<p><a href="drafts://x-callback-url/import_action?type=dropbox&amp;name=Daily%20Log&amp;path=%2FApps%2FDrafts%2FDailyLogs%2F&amp;filenametype=2&amp;filename=DayOne-%5B%5Bdate%7C%25Y-%25m-%25d%5D%5D&amp;ext=md&amp;writetype=2&amp;template=%23%23%20%5B%5Bdate%7C%25H%3A%25M%3A%25S%5D%5D%20-%20%5B%5Btitle%5D%5D%0A%0A%5B%5Bbody%5D%5D%0A">drafts://x-callback-url/import_action?type=dropbox&amp;name=Daily%20Log&amp;path=%2FApps%2FDrafts%2FDailyLogs%2F&amp;filenametype=2&amp;filename=DayOne-%5B%5Bdate%7C%25Y-%25m-%25d%5D%5D&amp;ext=md&amp;writetype=2&amp;template=%23%23%20%5B%5Bdate%7C%25H%3A%25M%3A%25S%5D%5D%20-%20%5B%5Btitle%5D%5D%0A%0A%5B%5Bbody%5D%5D%0A</a></p>
-
-<p>Now when you choose that action, your Drafts text will be appended to the
-current day&rsquo;s file preceded by a timestamp. It&rsquo;s easy enough to tweak that
-template to your liking once you&rsquo;ve imported it into Drafts.</p>
-
-<h3>Slogger plugin</h3>
-
-<p>To setup Slogger, I&rsquo;ll refer you to the <a href="http://brettterpstra.com/projects/slogger/">Slogger website</a>.
-This assumes you have it up and running.</p>
-
-<p>The Slogger plugin isn&rsquo;t specific to Drafts or Dropbox (though it&rsquo;s configured
-for this by default). It simply looks for files with a particular pattern and
-generates Day One entries from them. The plugin is available at
-<a href="https://github.com/nall/Slogger/blob/master/plugins_disabled/basicfile.rb">basicfile.rb</a>.
-You can drop that file in your Slogger <strong>plugins</strong> directory and you&rsquo;re good to
-go. The defaults should work with the rest of this blog post, but you may want
-to customize the options:</p>
-
-<h4>basicfile_dir</h4>
-
-<p>This is the directory in which to search for files. Currently the files must be
-named DayOne-YYYY-MM-DD.md.</p>
-
-<h4>basicfile_tags</h4>
-
-<p>This is a set of tags to apply to each daily entry in Day One. The default is
-#dailylog</p>
-
-<h4>basicfile_archive</h4>
-
-<p>This is a boolean that specifies whether temporary files are archived after
-being processed. If set to true, files are copied to:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>/Apps/Drafts/DailyLogs/Archive</span></code></pre></td></tr></table></div></figure>
-
-
-<p>If set to false, the files are removed after processing.</p>
-
-<h3>Bonus: Alfred Integration</h3>
-
-<p>Drafts is great and all, but what if you want to capture something while in
-OSX? I use <a href="http://www.alfredapp.com">Alfred</a> for all of my OSX keyboard-fu, so
-I wrote a small workflow to append to the temporary file. It&rsquo;s available
-<a href="http://nall.github.io/files/DayOneLog.alfredworkflow">here</a>.</p>
-
-<h2>Summary</h2>
-
-<p>With all of this in place, I now have a way to quickly jot down daily updates
-and have those all logged into Day One at a daily granularity. I hope this
-saves someone the work if they&rsquo;ve wanted a similar functionality!</p>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/12/30/using-drafts-and-slogger-to-create-dayone-entries/">Read on &rarr;</a>
+    </footer>
   
 
 

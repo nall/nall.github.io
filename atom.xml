@@ -4,7 +4,7 @@
   <title><![CDATA[STUNTAZ!!!]]></title>
   <link href="http://nall.github.io/atom.xml" rel="self"/>
   <link href="http://nall.github.io/"/>
-  <updated>2013-12-30T19:32:43-08:00</updated>
+  <updated>2013-12-30T19:35:31-08:00</updated>
   <id>http://nall.github.io/</id>
   <author>
     <name><![CDATA[Jon Nall]]></name>
@@ -31,6 +31,9 @@ entry.</p>
 <p>Lack of appending ability in Day One left me with creating some temporary file
 that could be updated during the day and creating a single Day One entry from
 the contents of that file each day.</p>
+
+<!-- more -->
+
 
 <p>I wanted to use <a href="http://agiletortoise.com/drafts">Drafts</a> to capture my
 micro-updates. I use it for other actions already, so I&rsquo;m familiar with it. It

@@ -1,0 +1,77 @@
+---
+layout: post
+title: "SSM-85D Technical Information"
+date: 2023-04-25 04:58:00 -0000
+---
+<style type="text/css">
+.center-image
+{
+    margin: 0 auto;
+    display: block;
+}
+</style>
+
+## Introduction
+This is a page detailing some technical information on the Yaesu SSM-85D microphone.
+
+![Yaesu SSM-85D](https://www.yaesu.com/AccessoryImages/SSM-85D.jpg "SSM-85D"){: .center-image}
+
+## Pinout
+The connector of the microphone is an [6P6C](https://en.wikipedia.org/wiki/Modular_connector#6P6C) modular connector. The pinout of the SSM-85D can be found by examining the [FTM-400 Technical Supplement](https://www.repeater-builder.com/yvs/pdfs/yaesu-ftm-400dr-de-xdr-xde-technical-supplement.pdf). In the schematic on Page 14 the jack is pictured (on the right edge between the top and middle).
+
+
+![SSM-85D Pinout](/assets/SSM-85D-Pinout.png "SSM-85D Pinout"){: .center-image width="100" }
+
+Table of pins and wire colors
+
+| Pin | Function | Wire Color |
+|-----|----------|------------|
+| 1   | PTT      | Blue |
+| 2   | Mic      | White |
+| 3   | GND      | Black (Tinned wire on modular connector) |
+| 4   | +5V      | Red |
+| 5   | SW1      | Gray|
+| 6   | SW2      | Green |
+
+
+## Schematic
+While I haven't found a schematic for the SSM-85D, I did find [one](https://www.facebook.com/groups/ftm300d/posts/856903654884606/) for what I understand is its predecessor, the MH-48. While this schematic certainly isn't identical, it uses a matrix circuit which jives with the voltage observations below.
+
+![MH-48 Schematic](/assets/MH-48-Schematic.jpg "MH-48 Schematic"){: .center-image }
+
+## PTT Voltages
+Supplying the mic with +5V, I connected a 220k pullup resistor to the PTT wire. When the button was not depressed, 4.898V were present. When PTT is pressed, 0.717V are present.
+
+## SW1/SW2 voltages
+The mic appears to use a [keyboard matrix circuit](https://en.wikipedia.org/wiki/Keyboard_matrix_circuit) to encode its 23 non-PTT buttons. With +5V applied and a 220k pullup resistor from each of SW1/SW2, here are the voltages found for each key.
+
+| Button | Row | Column | SW1 Voltage | SW2 Voltage |
+|--------|-----|--------|-------------|-------------|
+| Up | - | - | 0.675 | 0.190 |
+| Down | - | - | 1.275 | 0.190 |
+| Mute | - | - | 3.081 | 0.079 |
+| 1 | 1 | 1 | 0.067 | 0.563 |
+| 2 | 1 | 2 | 0.067 | 1.163 |
+| 3 | 1 | 3 | 0.067 | 1.982 |
+| A | 1 | 4 | 0.067 | 3.224 |
+| 4 | 2 | 1 | 0.519 | 0.563 |
+| 5 | 2 | 2 | 0.519 | 1.163 |
+| 6 | 2 | 3 | 0.519 | 1.982 |
+| B | 2 | 4 | 0.519 | 3.224 |
+| 7 | 3 | 1 | 1.145 | 0.563 |
+| 8 | 3 | 2 | 1.145 | 1.163 |
+| 9 | 3 | 3 | 1.145 | 1.982 |
+| C | 3 | 4 | 1.145 | 3.224 |
+| * | 4 | 1 | 1.976 | 0.563 |
+| 0 | 4 | 2 | 1.976 | 1.163 |
+| # | 4 | 3 | 1.976 | 1.982 |
+| D | 4 | 4 | 1.976 | 3.224 |
+| P1 | 5 | 1 | 3.082 | 0.563 |
+| P2 | 5 | 2 | 3.082 | 1.163 |
+| P3 | 5 | 3 | 3.082 | 1.982 |
+| P4 | 5 | 4 | 3.082 | 3.224 |
+
+## TODO
+
+   * Determine mic bias from FTM-300 (I seem to recall it was +4V when I looked on the scope, but need to confirm)
+   * Verify voltage from FTM-300 on +5V pin (not sure it's actually +5V as stated)

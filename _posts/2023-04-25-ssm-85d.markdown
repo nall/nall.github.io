@@ -31,7 +31,7 @@ Table of pins and wire colors
 | 1   | PTT      | Blue |
 | 2   | Mic      | White |
 | 3   | GND      | Black (Tinned wire on modular connector) |
-| 4   | +5V      | Red |
+| 4   | +V       | Red |
 | 5   | SW1      | Gray|
 | 6   | SW2      | Green |
 
